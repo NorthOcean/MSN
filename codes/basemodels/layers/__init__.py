@@ -4,8 +4,8 @@
 @LastEditors: Conghao Wong
 @LastEditTime: 2022-11-29 10:53:23
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 from .. import interpolation
@@ -14,7 +14,3 @@ from .__graphConv import GraphConv
 from .__linear import LinearLayer, LinearLayerND
 from .__pooling import MaxPooling2D
 from .__traj import ContextEncoding, TrajEncoding
-from .__transformLayers import (DB2_1D, FFTLayer, Haar1D, IFFTLayer,
-                                InverseDB2_1D, InverseHaar1D,
-                                NoneTransformLayer, _BaseTransformLayer,
-                                get_transform_layers)

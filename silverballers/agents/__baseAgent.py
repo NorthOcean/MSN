@@ -1,11 +1,11 @@
 """
 @Author: Conghao Wong
 @Date: 2022-06-20 21:40:55
-@LastEditors: Conghao Wong
-@LastEditTime: 2022-11-30 09:19:35
+@LastEditors: Beihao Xia
+@LastEditTime: 2023-03-06 17:10:30
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 import tensorflow as tf
@@ -47,13 +47,6 @@ class BaseAgentModel(Model):
                 preprocess[operation] = 'auto'
 
         self.set_preprocess(**preprocess)
-
-    def print_info(self, **kwargs):
-        info = {'Transform type': self.args.T,
-                'Index of keypoints': self.p_index}
-
-        kwargs.update(**info)
-        return super().print_info(**kwargs)
 
 
 class BaseAgentStructure(Structure):

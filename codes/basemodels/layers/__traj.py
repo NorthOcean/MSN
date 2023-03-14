@@ -1,17 +1,16 @@
 """
 @Author: Conghao Wong
 @Date: 2021-12-21 15:25:47
-@LastEditors: Conghao Wong
-@LastEditTime: 2022-11-22 09:16:39
+@LastEditors: Beihao Xia
+@LastEditTime: 2023-03-06 11:11:18
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 import tensorflow as tf
 
 from ...utils import POOLING_BEFORE_SAVING
-from .__transformLayers import _BaseTransformLayer
 
 
 class TrajEncoding(tf.keras.layers.Layer):
@@ -21,7 +20,7 @@ class TrajEncoding(tf.keras.layers.Layer):
 
     def __init__(self, units: int = 64,
                  activation=None,
-                 transform_layer: _BaseTransformLayer = None,
+                 transform_layer=None,
                  channels_first=True,
                  *args, **kwargs):
         """

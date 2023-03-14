@@ -4,8 +4,8 @@
 @LastEditors: Conghao Wong
 @LastEditTime: 2022-12-06 10:01:45
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 import numpy as np
@@ -142,13 +142,6 @@ class BaseHandlerModel(Model):
 
         outputs_p = self.process(outputs, preprocess=False, training=training)
         return outputs_p
-
-    def print_info(self, **kwargs):
-        info = {'Transform type': self.args.T,
-                'Number of keypoints': self.args.points}
-
-        kwargs.update(**info)
-        return super().print_info(**kwargs)
 
 
 class BaseHandlerStructure(Structure):

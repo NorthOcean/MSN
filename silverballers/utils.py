@@ -4,8 +4,8 @@
 @LastEditors: Conghao Wong
 @LastEditTime: 2022-11-29 10:20:12
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 from codes import INTERPOLATION_TYPES
@@ -14,7 +14,6 @@ from codes.args import Args
 from . import agents, handlers
 from .__args import SilverballersArgs
 from .__baseSilverballers import BaseSilverballers
-from .__silverballers import Silverballers47C, V
 
 
 class SilverballersMKII(BaseSilverballers):

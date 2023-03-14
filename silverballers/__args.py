@@ -1,11 +1,11 @@
 """
 @Author: Conghao Wong
 @Date: 2022-06-20 21:41:10
-@LastEditors: Conghao Wong
-@LastEditTime: 2022-11-29 11:29:52
+@LastEditors: Beihao Xia
+@LastEditTime: 2023-03-06 11:15:40
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 from codes.args import DYNAMIC, STATIC, TEMPORARY, Args
@@ -46,19 +46,6 @@ class _BaseSilverballersArgs(Args):
         - The third bit: `ROTATE` trajectories.
         """
         return self._arg('preprocess', '111', argtype=STATIC)
-
-    @property
-    def T(self) -> str:
-        """
-        Type of transformations used when encoding or decoding
-        trajectories.
-        It could be:
-        - `none`: no transformations
-        - `fft`: fast Fourier transform
-        - `haar`: haar wavelet transform
-        - `db2`: DB2 wavelet transform
-        """
-        return self._arg('T', 'fft', argtype=STATIC)
 
     @property
     def feature_dim(self) -> int:

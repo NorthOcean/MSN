@@ -4,8 +4,8 @@
 @LastEditors: Conghao Wong
 @LastEditTime: 2022-10-12 13:06:05
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 from .__ade import ADE_2D, FDE_2D, diff

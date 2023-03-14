@@ -1,11 +1,11 @@
 """
 @Author: Conghao Wong
 @Date: 2022-10-17 15:02:03
-@LastEditors: Conghao Wong
-@LastEditTime: 2022-10-17 15:05:15
+@LastEditors: Beihao Xia
+@LastEditTime: 2023-03-14 14:39:21
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 from typing import Iterable, TypeVar

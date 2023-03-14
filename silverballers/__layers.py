@@ -2,15 +2,14 @@
 @Author: Conghao Wong
 @Date: 2022-06-20 21:50:44
 @LastEditors: Beihao Xia
-@LastEditTime: 2022-11-22 19:43:09
+@LastEditTime: 2023-03-06 11:10:17
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 
 import tensorflow as tf
-from codes.basemodels import layers
 
 
 class OuterLayer(tf.keras.layers.Layer):
@@ -55,39 +54,3 @@ class OuterLayer(tf.keras.layers.Layer):
             return outer
         else:
             return tf.reshape(outer, list(outer.shape[:-2]) + [self.M*self.N])
-
-
-def get_transform_layers(Tname: str) -> \
-        tuple[type[layers._BaseTransformLayer],
-              type[layers._BaseTransformLayer]]:
-    """
-    Set transformation layers used when encoding or 
-    decoding trajectories.
-
-    :param Tname: name of the transform, canbe
-        - `'none'`
-        - `'fft'`
-        - `'haar'`
-        - `'db2'`
-    """
-
-    if Tname == 'none':
-        Tlayer = layers.NoneTransformLayer
-        ITlayer = layers.NoneTransformLayer
-
-    elif Tname == 'fft':
-        Tlayer = layers.FFTLayer
-        ITlayer = layers.IFFTLayer
-
-    elif Tname == 'haar':
-        Tlayer = layers.Haar1D
-        ITlayer = layers.InverseHaar1D
-
-    elif Tname == 'db2':
-        Tlayer = layers.DB2_1D
-        ITlayer = layers.InverseDB2_1D
-
-    else:
-        raise ValueError('Transform name not found.')
-
-    return Tlayer, ITlayer

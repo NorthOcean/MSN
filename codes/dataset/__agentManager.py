@@ -1,11 +1,11 @@
 """
 @Author: Conghao Wong
 @Date: 2022-08-03 10:50:46
-@LastEditors: Conghao Wong
-@LastEditTime: 2022-11-23 20:36:01
+@LastEditors: Beihao Xia
+@LastEditTime: 2023-03-06 11:09:13
 @Description: file content
-@Github: https://github.com/cocoon2wong
-@Copyright 2022 Conghao Wong, All Rights Reserved.
+@Github: https://northocean.github.io
+@Copyright 2023 Beihao Xia, All Rights Reserved.
 """
 
 from typing import Union
@@ -15,7 +15,6 @@ import tensorflow as tf
 from tqdm import tqdm
 
 from ..base import BaseManager
-from ..basemodels.layers import _BaseTransformLayer, get_transform_layers
 from ..constant import INPUT_TYPES
 from ..utils import POOLING_BEFORE_SAVING
 from .maps import SocialMapManager, TrajMapManager
@@ -90,9 +89,6 @@ class AgentManager(BaseManager):
         self.base_path: str = None
         self.npz_path: str = None
         self.maps_dir: str = None
-
-        # Transform layer
-        self.t_layers: dict[str, _BaseTransformLayer] = {}
 
     @property
     def agents(self) -> list[Agent]:
@@ -248,27 +244,12 @@ class AgentManager(BaseManager):
             return _get_gt_traj(self.agents)
 
         elif t == INPUT_TYPES.GROUNDTRUTH_SPECTRUM:
-            if t not in self.t_layers.keys():
-                t_type, _ = get_transform_layers(self.args.T)
-                self.t_layers[t] = t_type(
-                    (self.args.pred_frames, self.args.dim))
-
-            t_layer = self.t_layers[t]
-            return t_layer(_get_gt_traj(self.agents, text='groundtruth spectrums'))
+            self.log('This project does not support SPECTRUM',
+                     raiseError=TypeError, level='error')
 
         elif t == INPUT_TYPES.ALL_SPECTRUM:
-            if t not in self.t_layers.keys():
-                t_type, _ = get_transform_layers(self.args.T)
-                steps = self.args.obs_frames + self.args.pred_frames
-                self.t_layers[t] = t_type((steps, self.args.dim))
-
-            trajs = []
-            for agent in tqdm(self.agents, 'Prepare trajectory spectrums (all)...'):
-                trajs.append(np.concatenate(
-                    [agent.traj, agent.groundtruth], axis=-2))
-
-            t_layer = self.t_layers[t]
-            return t_layer(tf.cast(trajs, tf.float32))
+            self.log('This project does not support SPECTRUM',
+                     raiseError=TypeError, level='error')
 
         else:
             raise ValueError(type_name)
