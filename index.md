@@ -10,7 +10,7 @@ comments: true
  * @Author: Conghao Wong
  * @Date: 2023-03-21 17:52:21
  * @LastEditors: Beihao Xia
- * @LastEditTime: 2023-04-25 11:34:49
+ * @LastEditTime: 2023-04-25 19:39:25
  * @Description: file content
  * @Github: https://cocoon2wong.github.io
  * Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -28,7 +28,9 @@ Click the buttons below for more information.
 <div style="text-align: center;">
     <a class="btn btn-colorful btn-lg" href="https://arxiv.org/abs/2107.00932">📖 Paper</a>
     <a class="btn btn-colorful btn-lg" href="./supplementalMaterials">📝 Supplemental Materials</a>
+    <br> <br>
     <a class="btn btn-colorful btn-lg" href="https://github.com/NorthOcean/MSN">🛠️ Codes</a>
+    <a class="btn btn-colorful btn-lg" href="./use">💡 Codes Guidelines</a>
 </div>
 
 ## Abstract
