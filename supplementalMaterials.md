@@ -8,7 +8,7 @@ subtitle: "Supplemental Materials for \"MSN: Multi-Style Network for Trajectory 
  * @Author: Conghao Wong
  * @Date: 2023-03-21 17:52:21
  * @LastEditors: Beihao Xia
- * @LastEditTime: 2023-04-25 19:01:45
+ * @LastEditTime: 2023-04-25 19:46:22
  * @Description: file content
  * @Github: https://cocoon2wong.github.io
  * Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -36,7 +36,7 @@ Due to the limitation of the paper's length, we have omitted some of the minor a
 These descriptions and experiments are still important, and we present them as supplementary material.
 
 <div style="text-align: center;">
-    <a class="btn btn-colorful btn-lg" href="https://github.com/NorthOcean/MSN/blob/Web/assets/img/sm.pdf">⬇️ Download Supplemental Materials (PDF)</a>
+    <a class="btn btn-colorful btn-lg" href="https://github.com/NorthOcean/MSN/blob/Web/assets/img/SM.pdf">⬇️ Download Supplemental Materials (PDF)</a>
 </div>
 
 ## I. Transformer Details
