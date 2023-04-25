@@ -8,7 +8,7 @@ subtitle: "Supplemental Materials for \"MSN: Multi-Style Network for Trajectory 
  * @Author: Conghao Wong
  * @Date: 2023-03-21 17:52:21
  * @LastEditors: Beihao Xia
- * @LastEditTime: 2023-04-25 18:56:06
+ * @LastEditTime: 2023-04-25 19:01:45
  * @Description: file content
  * @Github: https://cocoon2wong.github.io
  * Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -245,7 +245,7 @@ Considering that the primary concern of this manuscript is still the multi-style
 
 ---
 
-[1] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, "Attention is all you need," in Advances in neural information processing systems, 2017, pp. 59986008.
-[2] C. Yu, X. Ma, J. Ren, H. Zhao, and S. Yi, "Spatio-temporal graph transformer networks for pedestrian trajectory prediction," in European Conference on Computer Vision. Springer, 2020, pp. 507-523.
-[3] F. Giuliari, I. Hasan, M. Cristani, and F. Galasso, "Transformer networks for trajectory forecasting," pp. 10 335-10 342, 2021.
-[4] B. Xia, C. Wong, Q. Peng, W. Yuan, and X. You, "Cscnet: Contextual semantic consistency network for trajectory prediction in crowded spaces," Pattern Recognition, p. 108552, 2022.
+1. A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin, "Attention is all you need," in Advances in neural information processing systems, 2017, pp. 59986008.
+2. C. Yu, X. Ma, J. Ren, H. Zhao, and S. Yi, "Spatio-temporal graph transformer networks for pedestrian trajectory prediction," in European Conference on Computer Vision. Springer, 2020, pp. 507-523.
+3. F. Giuliari, I. Hasan, M. Cristani, and F. Galasso, "Transformer networks for trajectory forecasting," pp. 10 335-10 342, 2021.
+4. B. Xia, C. Wong, Q. Peng, W. Yuan, and X. You, "Cscnet: Contextual semantic consistency network for trajectory prediction in crowded spaces," Pattern Recognition, p. 108552, 2022.
