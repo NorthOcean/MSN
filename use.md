@@ -10,7 +10,7 @@ gh-badge: [star, fork]
  * @Author: Conghao Wong
  * @Date: 2023-02-27 11:24:39
  * @LastEditors: Beihao Xia
- * @LastEditTime: 2023-04-25 19:35:22
+ * @LastEditTime: 2023-08-15 14:57:25
  * @Description: file content
  * @Github: https://cocoon2wong.github.io
  * Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -19,6 +19,8 @@ gh-badge: [star, fork]
 ![MSN](../assets/img/main.png)
 
 ## Get Started
+
+---
 
 You can clone [this repository](https://github.com/northocean/msn) by the following command:
 
@@ -37,7 +39,16 @@ Additional packages used are included in the `requirements.txt` file.
 {: .box-note}
 **Note:** Please see [Environment Configuration Guidelines](https://cocoon2wong.github.io/2022-03-03-env/) for more details.
 
-## Training On Your Datasets
+## Dataset Prepare and Process
+
+---
+
+Before training `MSN` on your own dataset, you should add your dataset information to the `datasets` directory.
+See [this document](https://cocoon2wong.github.io/Project-Luna/) for details.
+
+## Training
+
+---
 
 The `MSN` contains two main sub-networks, the style proposal sub-network, and the stylized prediction sub-network.
 `MSN` forecast agents' multiple trajectories end-to-end.
@@ -45,14 +56,33 @@ Considering that most of the loss function terms used to optimize the model work
 You can train your own `MSN` weights on your datasets by training each of these two sub-networks.
 After training, you can still use it as a regular end-to-end model.
 
-### Dataset Prepare
+### Stage-1 Subnetwork
 
-Before training `MSN` on your own dataset, you should add your dataset information to the `datasets` directory.
-See [this document](https://cocoon2wong.github.io/Project-Luna/) for details.
+It is the style proposal sub-network.
+To train the subnetwork, you can pass the --model msna argument to run the `main.py`.
+Please refer to section "Args Used" to learn how other args work when training and evaluating.
 
-### Dataset Process
+{: .box-warning}
+**Warning:** Do not pass any value to `--load` when training, or it will start evaluating the loaded model.
+
+For a quick start, you can train the subnetwork via the following minimum arguments:
+
+```bash
+python main.py --model msna --split sdd
+```
+
+### Stage-2 Subnetwork
+
+It is the stylized prediction sub-network.
+You can pass the `--model msnb` to run the training with the following minimum arguments:
+
+```bash
+python main.py --model msnb --split sdd
+```
 
 ## Evaluation
+
+---
 
 You can use the following command to evaluate the `MSN` performance end-to-end:
 
@@ -66,6 +96,8 @@ python main.py \
 Where `A_MODEL_PATH` and `B_MODEL_PATH` are the folders of the two sub-networks' weights.
 
 ## Pre-Trained Models
+
+---
 
 We have provided our pre-trained model weights to help you quickly evaluate the `MSN` performance.
 Our pre-trained models contain model weights trained on `ETH-UCY` by the `leave-one-out` strategy and model weights trained on `SDD` via the dataset split method from [SimAug](https://github.com/JunweiLiang/Multiverse).
@@ -160,6 +192,9 @@ python main.py --model MKII \
 ```
 
 ## Args Used
+
+---
+
 Please specify your customized args when training or testing your model in the following way:
 
 ```bash
@@ -294,8 +329,9 @@ About the `argtype`:
   The default value is `null`.
 <!-- DO NOT CHANGE THIS LINE -->
 
-
 ## Thanks
+
+---
 
 Codes of the Transformers used in this model come from [TensorFlow.org](https://www.tensorflow.org/tutorials/text/transformer);  
 Dataset CSV files of ETH-UCY come from [SR-LSTM (CVPR2019) / E-SR-LSTM (TPAMI2020)](https://github.com/zhangpur/SR-LSTM);  
@@ -303,6 +339,8 @@ Original dataset annotation files of SDD come from [Stanford Drone Dataset](http
 All contributors of the repository [Vertical](https://github.com/cocoon2wong/Vertical).
 
 ## Contact us
+
+---
 
 Conghao Wong ([@cocoon2wong](https://github.com/cocoon2wong)): conghaowong@icloud.com  
 Beihao Xia ([@NorthOcean](https://github.com/NorthOcean)): xbh_hust@hust.edu.cn
