@@ -10,7 +10,7 @@ gh-badge: [star, fork]
  * @Author: Conghao Wong
  * @Date: 2023-02-27 11:24:39
  * @LastEditors: Beihao Xia
- * @LastEditTime: 2023-08-15 14:57:25
+ * @LastEditTime: 2023-08-16 10:30:49
  * @Description: file content
  * @Github: https://cocoon2wong.github.io
  * Copyright 2023 Conghao Wong, All Rights Reserved.
@@ -152,8 +152,8 @@ You can start the quick evaluation via the following commands:
 for dataset in eth hotel univ zara1 zara2 sdd
   python main.py \
     --model MKII \
-    --loada ./weights/MSN/a_${dataset} \
-    --loadb ./weights/MSN/b_${dataset}
+    --loada ./weights/msn/a_${dataset} \
+    --loadb ./weights/msn/b_${dataset}
 ```
 
 ### Linear-Interpolation Models
@@ -180,15 +180,15 @@ If you have the dataset videos and put them into the `videos` folder, you can dr
 {: .box-warning}
 **Warning:** You must put videos according to the `video_path` item in the clip's `plist` config file in the `./dataset_configs` folder if you want to draw visualized results on them.
 
-If you want to draw visualized trajectories like what our paper shows, you can add the additional `--draw_distribution 2` argument.
-For example, if you have put the video `zara1.mp4` into `./videos/zara1.mp4`, you can draw the V^2-Net results with the following commands:
+If you want to draw visualized trajectories like what our paper shows, you can add the additional `--draw_distribution 1` argument.
+For example, if you have put the video `zara1.mp4` into `./videos/zara1.mp4`, you can draw the MSN results with the following commands:
 
 ```bash
 python main.py --model MKII \
     --loada ./weights/msn/a_zara1 \
     --loadb ./weights/msn/b_zara1 \
     --draw_results zara1 \
-    --draw_distribution 2
+    --draw_distribution 1
 ```
 
 ## Args Used
