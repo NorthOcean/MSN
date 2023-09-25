@@ -2,7 +2,7 @@
 @Author: Conghao Wong
 @Date: 2022-09-13 21:18:29
 @LastEditors: Beihao Xia
-@LastEditTime: 2023-03-02 20:57:07
+@LastEditTime: 2023-09-25 10:13:42
 @Description: file content
 @Github: https://northocean.github.io
 @Copyright 2023 Beihao Xia, All Rights Reserved.
@@ -45,8 +45,12 @@ class MSNAlphaModel(BaseAgentModel):
                          keypoints_number, keypoints_index,
                          structure, *args, **kwargs)
 
+        # Preprocess
         self.set_inputs(INPUT_TYPES.OBSERVED_TRAJ, INPUT_TYPES.MAP)
-        self.set_preprocess(move=0)
+        if self.args.msn_hotel_fix:
+            self.set_preprocess(move=0, scale='auto', rotate='auto')
+        else:
+            self.set_preprocess(move=0)
 
         # Force args
         self.args._set('key_points', '11')

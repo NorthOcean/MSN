@@ -37,6 +37,13 @@ class _BaseSilverballersArgs(Args):
         return self._arg('key_points', '0_6_11', argtype=STATIC)
 
     @property
+    def msn_hotel_fix(self) -> int:
+        """
+        Fix the training process of MSN on ETH-hotel by applying rotation.
+        """
+        return self._arg('msn_hotel_fix', 0, argtype=STATIC)
+
+    @property
     def preprocess(self) -> str:
         """
         Controls whether to run any pre-process before the model inference.
