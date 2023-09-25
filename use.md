@@ -223,21 +223,12 @@ About the `argtype`:
 - `--K`: type=`int`, argtype=`dynamic`.
   Number of multiple generations when testing. This arg only works for multiple-generation models. 
   The default value is `20`.
-- `--anntype`: type=`str`, argtype=`static`.
-  Model's predicted annotation type. Can be `'coordinate'` or `'boundingbox'`. 
-  The default value is `coordinate`.
-- `--auto_dimension`: type=`int`, argtype=`temporary`.
-  Choose whether to handle the dimension adaptively. It is now only used for silverballers models that are trained with annotation type `coordinate` but want to test on datasets with annotation type `boundingbox`. 
-  The default value is `0`.
 - `--batch_size` (short for `-bs`): type=`int`, argtype=`dynamic`.
   Batch size when implementation. 
   The default value is `5000`.
 - `--dataset`: type=`str`, argtype=`static`.
   Name of the video dataset to train or evaluate. For example, `'ETH-UCY'` or `'SDD'`. NOTE: DO NOT set this argument manually. 
   The default value is `Unavailable`.
-- `--dim`: type=`int`, argtype=`static`.
-  Dimension of the `trajectory`. For example, - coordinate (x, y) -> `dim = 2`; - boundingbox (xl, yl, xr, yr) -> `dim = 4`. 
-  The default value is `-1`.
 - `--draw_distribution` (short for `-dd`): type=`int`, argtype=`temporary`.
   Controls if draw distributions of predictions instead of points. If `draw_distribution == 0`, it will draw results as normal coordinates; If `draw_distribution == 1`, it will draw all results in the distribution way, and points from different time steps will be drawn with different colors. 
   The default value is `0`.
@@ -286,18 +277,9 @@ About the `argtype`:
 - `--obs_frames` (short for `-obs`): type=`int`, argtype=`static`.
   Observation frames for prediction. 
   The default value is `8`.
-- `--pmove`: type=`int`, argtype=`static`.
-  Index of the reference point when moving trajectories. 
-  The default value is `-1`.
 - `--pred_frames` (short for `-pred`): type=`int`, argtype=`static`.
   Prediction frames. 
   The default value is `12`.
-- `--protate`: type=`float`, argtype=`static`.
-  Reference degree when rotating trajectories. 
-  The default value is `0.0`.
-- `--pscale`: type=`str`, argtype=`static`.
-  Index of the reference point when scaling trajectories. 
-  The default value is `autoref`.
 - `--restore_args`: type=`str`, argtype=`temporary`.
   Path to restore the reference args before training. It will not restore any args if `args.restore_args == 'null'`. 
   The default value is `null`.
@@ -337,9 +319,6 @@ About the `argtype`:
 - `--feature_dim`: type=`int`, argtype=`static`.
   Feature dimensions that are used in most layers. 
   The default value is `128`.
-- `--key_points`: type=`str`, argtype=`static`.
-  A list of key time steps to be predicted in the agent model. For example, `'0_6_11'`. 
-  The default value is `0_6_11`.
 - `--loada` (short for `-la`): type=`str`, argtype=`temporary`.
   Path to load the first-stage agent model. 
   The default value is `null`.
@@ -349,21 +328,7 @@ About the `argtype`:
 - `--msn_hotel_fix`: type=`int`, argtype=`static`.
   Fix the training process of MSN on ETH-hotel by applying rotation. 
   The default value is `0`.
-- `--preprocess`: type=`str`, argtype=`static`.
-  Controls whether to run any pre-process before the model inference. It accepts a 3-bit-like string value (like `'111'`): - The first bit: `MOVE` trajectories to (0, 0); - The second bit: re-`SCALE` trajectories; - The third bit: `ROTATE` trajectories. 
-  The default value is `111`.
 
-### First-stage silverballers args
-
-- `--depth`: type=`int`, argtype=`static`.
-  Depth of the random noise vector. 
-  The default value is `16`.
-
-### Second-stage silverballers args
-
-- `--points`: type=`int`, argtype=`static`.
-  The number of keypoints accepted in the handler model. 
-  The default value is `1`.
 <!-- DO NOT CHANGE THIS LINE -->
 
 ## Thanks
